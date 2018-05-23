@@ -10,7 +10,7 @@
 3. Install Redux from https://redux.js.org/:
 
 	- Run: `cd base-react-redux-app`
-	- Run: `npm install --save react-redux`
+	- Run: `npm install --save redux react-redux`
 	
 4. Install Material-UI from https://material-ui.com/ (optional):
 
