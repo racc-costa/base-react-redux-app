@@ -5,12 +5,17 @@
 	- Run: `npm -v`
 2. Create a React application:
 
-	Run: `npx create-react-app <name>`
+	- Run: `npx create-react-app <name>`
 	
 3. Install Redux from https://redux.js.org/:
 
-	Run: `npm install --save react-redux`
+	- Run: `npm install --save react-redux`
 	
 4. Install Material-UI from https://material-ui.com/ (optional):
 
-	Run: `npm install --save @material-ui/core`
+	- Run: `npm install --save @material-ui/core`
+
+5. Make sure everything is fine:
+
+	- Run: `npm start`
+	- Try: http://localhost:3000
