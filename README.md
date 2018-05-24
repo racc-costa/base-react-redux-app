@@ -11,7 +11,7 @@
 	- Run: `npm install --save react-router redux react-redux redux-thunk`
 	
 4. Install Material-UI from https://material-ui.com/ (optional):
-	- Run: `npm install --save @material-ui/core`
+	- Run: `npm install --save @material-ui/core @material-ui/icons`
 
 5. Make sure everything is fine:
 	- Run: `npm start`
