@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
-import PageTitle from '../../components/PageTitle';
+import { Button, FormControlLabel, Checkbox } from '@material-ui/core';
+import PageTitle from '../../components/pageTitle';
+import Input from '../../components/input'; 
 import { FormControl } from '@material-ui/core';
 
 class Login extends Component {
@@ -11,10 +12,9 @@ class Login extends Component {
             <div>
                 <PageTitle title="Personal Banking Login" subtitle="Enter your account number and password" />
                 <FormControl noValidate autoComplete="off">
+                    <Input required label="Account number" type="Number" />
                     <div className="line"></div>
-                    <TextField required label="Account number" type="Number" />
-                    <div className="line"></div>
-                    <TextField required label="Password" type="password" />
+                    <Input required label="Password" type="password" />
                     <div className="line"></div>
                     <Button variant="raised" color="primary" onClick={this.props.onLogin}>
                         Access my account
