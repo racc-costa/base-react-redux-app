@@ -13,9 +13,7 @@ class Login extends Component {
                 <PageTitle title="Personal Banking Login" subtitle="Enter your account number and password" />
                 <FormControl noValidate autoComplete="off">
                     <Input required label="Account number" type="Number" />
-                    <div className="line"></div>
                     <Input required label="Password" type="password" />
-                    <div className="line"></div>
                     <Button variant="raised" color="primary" onClick={this.props.onLogin}>
                         Access my account
                     </Button>
