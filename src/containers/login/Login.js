@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
 import PageTitle from '../../components/PageTitle';
 import { FormControl } from '@material-ui/core';
@@ -15,8 +16,12 @@ class Login extends Component {
                     <div className="line"></div>
                     <TextField required label="Password" type="password" />
                     <div className="line"></div>
-                    <Button variant="raised" color="primary">
+                    <Button variant="raised" color="primary" onClick={this.props.onLogin}>
                         Access my account
+                    </Button>
+                    <br />
+                    <Button variant="raised" color="primary" onClick={this.props.onLogout}>
+                        Exit
                     </Button>
                     <FormControlLabel
                         control={
@@ -30,4 +35,15 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = state => {
+    return {};
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogin: () => dispatch({type: 'LOGIN'}),
+        onLogout: () => dispatch({type: 'LOGOUT'}),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
