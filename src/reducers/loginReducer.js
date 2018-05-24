@@ -4,8 +4,8 @@ const initialState = {
     counter: 0
 };
 
-const reducer = ( state = initialState, action ) => {
-    switch ( action.type ) {
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
         case actionTypes.LOGIN:
             console.log('LOGIN was triggered.')
             const newState = Object.assign({}, state);
@@ -18,7 +18,7 @@ const reducer = ( state = initialState, action ) => {
                 counter: state.counter - 1
             }
         default:
-              return state;
+            return state;
     }
 };
 
