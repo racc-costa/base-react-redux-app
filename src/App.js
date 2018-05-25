@@ -3,9 +3,9 @@ import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { indigo } from '@material-ui/core/colors/indigo';
-import Login from './containers/login/Login';
 import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import Login from './containers/login/Login';
 
 const theme = createMuiTheme({
     palette: {
