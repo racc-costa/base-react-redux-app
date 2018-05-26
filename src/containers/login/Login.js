@@ -10,9 +10,9 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <PageTitle title="Personal Banking Login" subtitle="Enter your account number and password" />
+                <PageTitle title="Personal App Login" subtitle="Enter your login and password" />
                 <FormControl noValidate autoComplete="off">
-                    <Input required label="Account number" type="Number" />
+                    <Input required label="Login" type="Number" />
                     <Input required label="Password" type="password" />
                     <Button variant="raised" color="primary" onClick={this.props.onLogin}>
                         Access my account
