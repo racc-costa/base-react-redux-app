@@ -5,7 +5,7 @@ const initialState = {
 
 };
 
-const reducer = (state = initialState, action) => {
+const loginReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.LOGIN:
             console.log('LOGIN was triggered.')
@@ -30,4 +30,4 @@ const reducer = (state = initialState, action) => {
     }
 };
 
-export default reducer;
+export default loginReducer;
