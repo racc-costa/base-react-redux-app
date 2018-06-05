@@ -1,4 +1,4 @@
-html *{
+html * {
     font-family: 'Roboto',Helvetica,Arial,sans-serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
@@ -10,7 +10,7 @@ h1 {
 
 a {
     text-decoration: none;
-  }
+}
 
 .line {
     margin: 10px 0px 10px 0px;
