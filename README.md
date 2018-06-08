@@ -1,8 +1,10 @@
 # Base React application with Redux
+## Basic setup
 
 1. Install Node.js 8.11.x
 	- Run: `node -v`
 	- Run: `npm -v`
+
 2. Create a React application:
 	- Run: `npx create-react-app base-react-redux-app`
 	
