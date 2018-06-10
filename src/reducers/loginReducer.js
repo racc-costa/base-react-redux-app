@@ -1,14 +1,14 @@
-import * as actionTypes from './actions';
+import * as actionTypes from '../actions/ActionsTypes';
 import axios from 'axios';
 
 const initialState = {
 
 };
 
-const reducer = (state = initialState, action) => {
+const loginReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.LOGIN:
-            console.log('LOGIN was triggered.')
+            console.log('loginReducer: LOGIN was triggered.')
 
             axios.get('http://api')
                 .then(response => {
@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
             const newState = Object.assign({}, state);
             return newState;
         case actionTypes.LOGOUT:
-            console.log('LOGOUT was triggered.')
+            console.log('loginReducer: LOGOUT was triggered.')
             return {
                 ...state
             }
@@ -30,4 +30,4 @@ const reducer = (state = initialState, action) => {
     }
 };
 
-export default reducer;
+export default loginReducer;
