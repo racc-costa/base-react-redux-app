@@ -1,32 +1,44 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { indigo } from '@material-ui/core/colors/indigo';
-import LoginPage from './containers/login/LoginPage';
-import AppMenu from './components/AppMenu';
-
-const theme = createMuiTheme({
-    palette: {
-        primary: indigo
-    }
-})
+import { LOGIN, LOGOUT } from './actions/actionsTypes';
+import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 class App extends Component {
 
-    render() {
-        return (
-            <MuiThemeProvider theme={theme}>
-                <React.Fragment>
-                    <CssBaseline />
-                    <AppMenu />
-                    <div id="appContent">
-                        <LoginPage />
-                    </div>
-                </React.Fragment>
-            </MuiThemeProvider>
-        );
-    }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          Authenticated: {this.props.isAuthenticated.toString()}
+        </p>
+        <Button variant="raised" color="primary" onClick={this.props.onLogin}>
+          Login
+        </Button>
+        <Button variant="raised" color="primary" onClick={this.props.onLogout}>
+          Logout
+        </Button>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.login.authenticated
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLogin: () => dispatch({ type: LOGIN, payload: true }),
+    onLogout: () => dispatch({ type: LOGOUT, payload: false })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

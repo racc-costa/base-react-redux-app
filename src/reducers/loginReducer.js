@@ -1,30 +1,16 @@
-import * as actionTypes from '../actions/ActionsTypes';
-import axios from 'axios';
+import { LOGIN, LOGOUT } from '../actions/actionsTypes';
 
 const initialState = {
-
+    authenticated: false
 };
 
 const loginReducer = (state = initialState, action) => {
+
     switch (action.type) {
-        case actionTypes.LOGIN:
-            console.log('loginReducer: LOGIN was triggered.')
-
-            axios.get('http://api')
-                .then(response => {
-                    console.log(response.data)
-                })
-                .catch(error => {
-                    console.log(error)
-                });
-
-            const newState = Object.assign({}, state);
-            return newState;
-        case actionTypes.LOGOUT:
-            console.log('loginReducer: LOGOUT was triggered.')
-            return {
-                ...state
-            }
+        case LOGIN:
+            return { ...state, authenticated: action.payload };
+        case LOGOUT:
+        return { ...state, authenticated: action.payload };
         default:
             return state;
     }
