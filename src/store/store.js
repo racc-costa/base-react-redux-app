@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import loginReducer from '../reducers/loginReducer';
 import accountReducer from '../reducers/accountReducer';
 
@@ -7,6 +8,7 @@ const rootReducer = combineReducers({
     account: accountReducer
 });
 
-const store = createStore(rootReducer);
+const middleware = applyMiddleware(thunk);
+const store = createStore(rootReducer, middleware);
 
 export default store;

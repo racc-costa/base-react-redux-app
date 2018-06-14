@@ -5,16 +5,17 @@ const initialState = {
     isFetched: false,
     lastUpdated: null,
     error: null,
-    authenticated: false
+    authenticated: false,
+    text: ''
 };
 
 const loginReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case LOGIN:
-            return { ...state, authenticated: action.payload };
+            return { ...state, authenticated: action.payload.authenticated, text: action.payload.text };
         case LOGOUT:
-            return { ...state, authenticated: action.payload };
+            return { ...state, authenticated: action.payload.authenticated, text: action.payload.text };
         default:
             return state;
     }

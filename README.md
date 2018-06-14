@@ -23,7 +23,8 @@
 	
 ## 2. Using Redux  
 2.1. Define actions types in src/actions/actionsTypes.js.  
-2.2. Define your reducers inside src/reducers folder.  
-2.3. Create a store in src/store/store.js using Redux `combineReducers` and `createStore`.  
-2.4. Add the store to your application using Redux `Provider` in index.js.  
-2.5. Connect your container to Redux using `connect`, `mapStateToProps` and `mapDispatchToProps`.  
+2.2. Create your actions inside src/actions folder.  
+2.3. Create your reducers inside src/reducers folder.  
+2.4. Create a store in src/store/store.js using Redux `combineReducers`, `applyMiddleware` and `createStore`.  
+2.5. Add the store to your application using Redux `Provider` in index.js.  
+2.6. Create your containers inside src/containers folder and connect them to Redux using `connect`, `mapStateToProps` and `mapDispatchToProps`.  
