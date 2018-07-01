@@ -6,42 +6,38 @@ import { login, logout } from '../actions/loginAction';
 
 class Home extends Component {
 
-  render() {
-    return (
-      <div>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          Authenticated: {this.props.isAuthenticated.toString()}
-        </p>
-        <p className="App-intro">
-          Text: {this.props.text.toString()}
-        </p>
-        <Button variant="raised" color="primary" onClick={this.props.onLogin}>
-          Login
+    render() {
+        return (
+            <div>
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <h1 className="App-title">Welcome to React</h1>
+                </header>
+                <p className="App-intro">
+                    Authenticated: {this.props.isAuthenticated.toString()}
+                </p>
+                <p className="App-intro">
+                    Text: {this.props.text.toString()}
+                </p>
+                <Button variant="raised" color="primary" onClick={this.props.onLogin}>
+                    Login
         </Button>
-        <Button variant="raised" color="primary" onClick={this.props.onLogout}>
-          Logout
+                <Button variant="raised" color="primary" onClick={this.props.onLogout}>
+                    Logout
         </Button>
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 }
 
-const mapStateToProps = state => {
-  return {
+const mapStateToProps = (state) => ({
     isAuthenticated: state.login.authenticated,
     text: state.login.text
-  };
-};
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = (dispatch) => ({
     onLogin: () => login(),
     onLogout: () => logout()
-  };
-};
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

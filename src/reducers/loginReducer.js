@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../actions/actionsTypes';
+import { LOGIN, LOGOUT } from '../actions/ActionsTypes';
 
 const initialState = {
     isFetching: false,

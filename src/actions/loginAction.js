@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from './actionsTypes';
+import { LOGIN, LOGOUT } from './ActionsTypes';
 import store from '../store/store';
 import axios from 'axios';
 
